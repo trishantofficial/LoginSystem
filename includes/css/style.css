@@ -1,0 +1,17 @@
+.container-fluid {
+  margin-top: 20px;
+}
+
+
+
+.jumbotron {
+  font-family: Helvetica Neue;
+}
+
+.a {
+  margin-top: 110px;
+  margin-bottom: 110px;
+}
+body {
+  font-size: 18;
+}
