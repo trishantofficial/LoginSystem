@@ -89,7 +89,7 @@ class User {
 	}
 	public function setPassword() {
 		echo '<script>';
-		echo 'window.open("http://localhost/custom_site/setpassword.php");';
+		echo 'window.open("../setpassword.php");';
 		echo '</script>';
 		//echo '<body unload=+"">';
 	}

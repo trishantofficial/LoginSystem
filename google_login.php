@@ -5,7 +5,7 @@ $Client = new Google_Client();
 $Client->setApplicationName(Config::get('google/ApplicationName'));
 $Client->setClientId(Config::get('google/ClientId'));
 $Client->setClientSecret(Config::get('google/ClientSecret'));
-$Client->setRedirectUri('http://localhost/custom_site/google_login.php');
+$Client->setRedirectUri($_SERVER['DOCUMENT_ROOT'] . '/LoginSystem/google_login.php');
 $Client->setScopes(array('https://www.googleapis.com/auth/plus.login', 'https://www.googleapis.com/auth/plus.me', 'https://www.googleapis.com/auth/userinfo.email'));
 $me = new Google_Service_Oauth2($Client);
 if(Input::exists('get')) {

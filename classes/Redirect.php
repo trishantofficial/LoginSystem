@@ -6,7 +6,7 @@ class Redirect {
 				switch($location) {
 					case 404:
 						header('HTTP /1.0 404 Not Found');
-						include $_SERVER['DOCUMENT_ROOT'] . '/custom_site/includes/errors/404.php';
+						include $_SERVER['DOCUMENT_ROOT'] . '/LoginSystem/includes/errors/404.php';
 						exit();
 					break;
 				}

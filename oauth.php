@@ -8,7 +8,7 @@ if(Input::exists('get')) {
 			'app_secret' => Config::get('facebook/app_secret'),
   			'default_graph_version' => Config::get('facebook/default_graph_version'),
   		]);
-  		$redirectUrl = 'http://localhost/custom_site/facebook_login.php';
+  		$redirectUrl = $_SERVER['DOCUMENT_ROOT'] . '/LoginSystem/facebook_login.php';
 		$helper = $fb->getRedirectLoginHelper();
 		$permissions = ['email']; 
 		Redirect::to($helper->getLoginUrl($redirectUrl, $permissions));
@@ -18,7 +18,7 @@ if(Input::exists('get')) {
 		$Client->setApplicationName(Config::get('google/ApplicationName'));
 		$Client->setClientId(Config::get('google/ClientId'));
 		$Client->setClientSecret(Config::get('google/ClientSecret'));
-		$Client->setRedirectUri('http://localhost/custom_site/google_login.php');
+		$Client->setRedirectUri($_SERVER['DOCUMENT_ROOT'] . '/LoginSystem/google_login.php');
 		$Client->setScopes('email');
 		Redirect::to($Client->createAuthUrl());
 	} elseif(Input::get('type') == 'twitter') {

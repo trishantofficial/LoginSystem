@@ -1,5 +1,5 @@
 <?php
-require_once ($_SERVER['DOCUMENT_ROOT'] . '/custom_site/core/init.php');
+require_once ($_SERVER['DOCUMENT_ROOT'] . '/LoginSystem/core/init.php');
 if(Session::exists('error')) {
 	echo Session::flash('error') . '<br>';
 }
