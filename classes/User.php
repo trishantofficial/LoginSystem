@@ -55,11 +55,11 @@ class User {
 			$email = $this->find($email);
 			if ($email) {
 				if($this->data()->password === Hash::make($password, $this->data()->salt)) {
-					Session::put($this->_sessionName, $this->data()->id);
+				    Session::put($this->_sessionName, $this->data()->id);
 					if ($remember) {
 						$hash = Hash::unique();
 						$hashCheck = $this->_db->get('users_session', array('user_id', '=', $this->data()->id));
-						if(!$hashCheck->count()) {
+						if(!$hashCheck) {
 							$this->_db->insert('users_session', array(
 								'user_id' => $this->data()->id,
 								'hash' => $hash
@@ -89,7 +89,8 @@ class User {
 	}
 	public function setPassword() {
 		echo '<script>';
-		echo 'window.open("../setpassword.php");';
+        $location = $_SERVER['DOCUMENT_ROOT'] . '/LoginSystem/includes/setpassword.php';
+		echo 'window.open(' . $location . ');';
 		echo '</script>';
 		//echo '<body unload=+"">';
 	}
